@@ -1,5 +1,6 @@
 package com.example.calculate.refactor.first;
 
+import com.example.calculate.refactor.fourth.PositiveNumber;
 import com.example.calculate.refactor.second.ArithmeticOperator;
 import com.example.calculate.refactor.third.*;
 
@@ -30,7 +31,7 @@ public class Calculator {
     public static final List<NewArithmeticOperator> CALCULATOR = List.of(new AdditionOperator(), new SubtractionOperator(), new MultiplicationOperator(), new DivisionOperator());
 
     // 두번째 리팩토링
-    public static int calculate(int operand1, String operator, int operand2) {
+    public static int calculate(PositiveNumber operand1, String operator, PositiveNumber operand2) {
         return CALCULATOR.stream()
                 .filter(newArithmeticOperator -> newArithmeticOperator.support(operator))
                 .map( newArithmeticOperator -> newArithmeticOperator.calculate(operand1, operand2))
